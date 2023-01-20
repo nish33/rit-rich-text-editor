@@ -1,0 +1,43 @@
+
+$editor-bg: #fff;
+$editor-shadow: 2px 2px 4px #eaeaea;
+$editor-border: 1px solid #212121;
+$editor-border-radius: 0.25rem;
+
+$editor-controls-container-bg: #cacaca;
+$editor-controls-container-padding: 0.5rem;
+
+$editor-control-btn-color: #212121;
+$editor-control-btn-bg: transparent;
+$editor-control-btn-active-bg: #212121;
+$editor-control-btn-active-color: #fff;
+$editor-control-btn-border: none;
+$editor-control-btn-outline: none;
+$editor-control-btn-border-radius: 0.2rem;
+
+$editor-content-bg: transparent;
+$editor-content-height: 10rem;
+$editor-content-padding: 0.5rem;
+
+.rit {
+  &-editor {
+    width: 100%;
+    background: $editor-bg;
+    box-shadow: $editor-shadow;
+    border: $editor-border;
+    border-radius: $editor-border-radius;
+    &--controls {
+        background: $editor-controls-container-bg;
+        padding: $editor-controls-container-padding;
+        border-radius: $editor-border-radius $editor-border-radius 0 0;
+    }
+    &--content {
+        background: $editor-content-bg;
+        height: $editor-content-height;
+        padding: $editor-content-padding;
+        &:focus {
+            outline: none;
+        }
+    }
+  }
+}
