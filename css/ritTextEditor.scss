@@ -7,13 +7,15 @@ $editor-border-radius: 0.25rem;
 $editor-controls-container-bg: #cacaca;
 $editor-controls-container-padding: 0.5rem;
 
+$editor-control-btn-gap: 0.5rem;
+$editor-control-btn-padding: 0.25rem 0.5rem;
 $editor-control-btn-color: #212121;
 $editor-control-btn-bg: transparent;
+$editor-control-btn-outline: none;
+$editor-control-btn-border: 1px solid $editor-control-btn-bg;
+$editor-control-btn-border-radius: 0.2rem;
 $editor-control-btn-active-bg: #212121;
 $editor-control-btn-active-color: #fff;
-$editor-control-btn-border: none;
-$editor-control-btn-outline: none;
-$editor-control-btn-border-radius: 0.2rem;
 
 $editor-content-bg: transparent;
 $editor-content-height: 10rem;
@@ -30,6 +32,24 @@ $editor-content-padding: 0.5rem;
         background: $editor-controls-container-bg;
         padding: $editor-controls-container-padding;
         border-radius: $editor-border-radius $editor-border-radius 0 0;
+        display: flex;
+        column-gap: $editor-control-btn-gap;
+        &__btn {
+          padding: $editor-control-btn-padding;
+          background: $editor-control-btn-bg;
+          color: $editor-control-btn-color;
+          border: $editor-control-btn-border;
+          border-radius: $editor-control-btn-border-radius;
+          outline: $editor-control-btn-outline;
+          cursor: pointer;
+          &:hover, &.active {
+            border-color: $editor-control-btn-active-bg;
+          }
+          &.active, &:active {
+            background: $editor-control-btn-active-bg;
+            color: $editor-control-btn-active-color;
+          }
+        }
     }
     &--content {
         background: $editor-content-bg;

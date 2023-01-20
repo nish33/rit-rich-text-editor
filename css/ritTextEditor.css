@@ -9,6 +9,25 @@
   background: #cacaca;
   padding: 0.5rem;
   border-radius: 0.25rem 0.25rem 0 0;
+  display: flex;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+.rit-editor--controls__btn {
+  padding: 0.25rem 0.5rem;
+  background: transparent;
+  color: #212121;
+  border: 1px solid transparent;
+  border-radius: 0.2rem;
+  outline: none;
+  cursor: pointer;
+}
+.rit-editor--controls__btn:hover, .rit-editor--controls__btn.active {
+  border-color: #212121;
+}
+.rit-editor--controls__btn.active, .rit-editor--controls__btn:active {
+  background: #212121;
+  color: #fff;
 }
 .rit-editor--content {
   background: transparent;
