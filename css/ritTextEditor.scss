@@ -10,6 +10,7 @@ $editor-controls-container-padding: 0.5rem;
 $editor-control-btn-gap: 0.5rem;
 $editor-control-btn-padding: 0.25rem 0.5rem;
 $editor-control-btn-color: #212121;
+$editor-control-btn-disabled-color: #515151;
 $editor-control-btn-bg: transparent;
 $editor-control-btn-outline: none;
 $editor-control-btn-border: 1px solid $editor-control-btn-bg;
@@ -48,6 +49,11 @@ $editor-content-padding: 0.5rem;
           &.active, &:active {
             background: $editor-control-btn-active-bg;
             color: $editor-control-btn-active-color;
+          }
+          &[disabled] {
+            color: $editor-control-btn-disabled-color;
+            cursor: default;
+            border: none;
           }
         }
     }

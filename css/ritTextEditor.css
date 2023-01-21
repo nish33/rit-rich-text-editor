@@ -29,6 +29,11 @@
   background: #212121;
   color: #fff;
 }
+.rit-editor--controls__btn[disabled] {
+  color: #515151;
+  cursor: default;
+  border: none;
+}
 .rit-editor--content {
   background: transparent;
   height: 10rem;

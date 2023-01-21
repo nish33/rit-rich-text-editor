@@ -41,11 +41,13 @@ const RitTextEditorContent = `
 
 const RitTextEditor = async (id, name = "") => {
   RitTextEditorStates.editorContainer = id;
+
   const container = document.getElementById(id);
   container.innerHTML = `
     <textarea id="${id}_textarea" name="${name}" hidden></textarea>
     ${RitTextEditorContent}
   `;
+
   const controlBtns = container.querySelectorAll(
     "button.rit-editor--controls__btn"
   );
@@ -54,37 +56,7 @@ const RitTextEditor = async (id, name = "") => {
       RitTextEditorStates.controlStatus[el.dataset["status"]] = false;
     }
   });
-  return await RitTextEditorControlEvents();
+
+  const contentContainer = document.querySelector(`#${id} .rit-editor--content`);
+  contentContainer.innerHTML = "";
 };
-
-const RitTextEditorToggleControlBtnStatus = async (control) => {
-    RitTextEditorStates.controlStatus[control] = !RitTextEditorStates.controlStatus[control];
-    console.log(RitTextEditorStates.controlStatus);
-};
-
-const RitTextEditorControlEvents = async () => {
-  const container = document.getElementById(
-    RitTextEditorStates.editorContainer
-  );
-  const controlBtns = container.querySelectorAll(
-    "button.rit-editor--controls__btn"
-  );
-
-  controlBtns.forEach((el) => {
-    el.addEventListener("click", async (e) => {
-        e.preventDefault();
-
-        const command = el.dataset["controls"];
-        if(el.hasAttribute("data-status")) {
-            document.execCommand(command, false, null);
-            return await RitTextEditorToggleControlBtnStatus(el.dataset["status"]);
-        }
-    });
-  });
-};
-
-const RitTextEditorMain = async () => {
-  await RitTextEditor("textEditorExample");
-  console.log(RitTextEditorStates);
-};
-RitTextEditorMain();
